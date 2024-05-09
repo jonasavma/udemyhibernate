@@ -1,4 +1,4 @@
-package br.com.neryhibernate;
+
 
 
 
@@ -21,7 +21,7 @@ public class EditarAluno {
               aluno.setAlu_nome("Jonas avelino");
               aluno.setAlu_curso("hibernate");
               aluno.setAlu_fone("969403632");
-              aluno.setAlu_cidade("Nova IguaÁu");
+              aluno.setAlu_cidade("Nova Igua√ßu");
               
               Transaction tx_aluno= sessao.beginTransaction();
               
@@ -32,7 +32,7 @@ public class EditarAluno {
 			
 			
 		} catch (Exception e) {
-               JOptionPane.showMessageDialog(null, "Erro de insers„o :"+ e);
+               JOptionPane.showMessageDialog(null, "Erro de insers√ß√£o :"+ e);
 		
 		}
 

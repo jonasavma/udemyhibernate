@@ -1,6 +1,3 @@
-package br.com.neryhibernate;
-
-
 
 public class Aluno {
 
