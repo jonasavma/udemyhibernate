@@ -10,9 +10,8 @@ import org.hibernate.Transaction;
 
 public class formAluno extends javax.swing.JFrame {
 
-    /**
-     * Creates new form formAluno
-     */
+    SessionFactory fabrica = new Configuration().configure().buildSessionFactory();
+
     public formAluno() {
         initComponents();
         preencher_jtable();
@@ -263,7 +262,6 @@ public class formAluno extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         try {
-            SessionFactory fabrica = new Configuration().configure().buildSessionFactory();
             Session sessao = fabrica.openSession();
             Aluno aluno = new Aluno();
             aluno.setAlu_codigo(Integer.parseInt(tf_codigo.getText().toString()));
@@ -277,8 +275,11 @@ public class formAluno extends javax.swing.JFrame {
             tx_aluno.commit();
             sessao.close();
 
+            JOptionPane.showMessageDialog(null, "Salvo com sucesso :");
+            preencher_jtable();
+
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro de insers�o :" + e);
+            JOptionPane.showMessageDialog(null, "Erro de inserssão os campos não pode ser vazios :" + e);
 
         }
 
@@ -286,7 +287,7 @@ public class formAluno extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
-            SessionFactory fabrica = new Configuration().configure().buildSessionFactory();
+
             Session sessao = fabrica.openSession();
             Aluno aluno = new Aluno();
             aluno.setAlu_codigo(Integer.parseInt(tf_codigo.getText().toString()));
@@ -299,6 +300,8 @@ public class formAluno extends javax.swing.JFrame {
             sessao.update(aluno);
             tx_aluno.commit();
             sessao.close();
+            JOptionPane.showMessageDialog(null, "Aletrado com sucesso :");
+            preencher_jtable();
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro de inserssão :" + e);
@@ -312,7 +315,6 @@ public class formAluno extends javax.swing.JFrame {
         int opcao_escolhiha = JOptionPane.showConfirmDialog(null, excluir, "Exclusão", JOptionPane.YES_OPTION);
         if (opcao_escolhiha == JOptionPane.YES_OPTION) {
             try {
-                SessionFactory fabrica = new Configuration().configure().buildSessionFactory();
                 Session sessao = fabrica.openSession();
 
                 Aluno aluno = new Aluno();
@@ -324,7 +326,7 @@ public class formAluno extends javax.swing.JFrame {
                 sessao.close();
                 JOptionPane.showMessageDialog(null, "Exclusao realizado com sucesso :");
                 preencher_jtable();
-               
+
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Erro ao Listar Alunos :" + e);
 
@@ -372,7 +374,7 @@ public class formAluno extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setNumRows(0);
         try {
-            SessionFactory fabrica = new Configuration().configure().buildSessionFactory();
+
             Session sessao = fabrica.openSession();
 
             List<Aluno> lista_aluno = new ArrayList<>();
