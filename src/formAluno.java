@@ -42,7 +42,6 @@ public class formAluno extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         bt_salvar = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         bt_primeiro = new javax.swing.JButton();
         bt_final = new javax.swing.JButton();
@@ -108,17 +107,10 @@ public class formAluno extends javax.swing.JFrame {
             }
         });
 
-        bt_salvar.setText("Salvar");
+        bt_salvar.setText("Salvar&Atualizando");
         bt_salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_salvarActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Alterar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
             }
         });
 
@@ -202,17 +194,15 @@ public class formAluno extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bt_salvar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton4)
                         .addGap(18, 18, 18)
                         .addComponent(bt_primeiro)
-                        .addGap(2, 2, 2)
+                        .addGap(18, 18, 18)
                         .addComponent(bt_voltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(bt_final)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -241,7 +231,6 @@ public class formAluno extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(bt_salvar)
-                    .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(bt_primeiro)
                     .addComponent(bt_final)
@@ -306,14 +295,17 @@ public class formAluno extends javax.swing.JFrame {
         try {
             Session sessao = fabrica.openSession();
             Aluno aluno = new Aluno();
-            //aluno.setAlu_codigo(Integer.parseInt(tf_codigo.getText().toString()));
+
+            if (!tf_codigo.getText().equals("")) {
+                aluno.setAlu_codigo(Integer.parseInt(tf_codigo.getText().toString()));
+            }
             aluno.setAlu_nome(tf_nome.getText());
             aluno.setAlu_curso(tf_curso.getText());
             aluno.setAlu_fone(tf_fone.getText());
             aluno.setAlu_cidade(tf_cidade.getText());
 
             Transaction tx_aluno = sessao.beginTransaction();
-            sessao.save(aluno);
+            sessao.saveOrUpdate(aluno);
             tx_aluno.commit();
             sessao.close();
 
@@ -327,31 +319,6 @@ public class formAluno extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_bt_salvarActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try {
-
-            Session sessao = fabrica.openSession();
-            Aluno aluno = new Aluno();
-            aluno.setAlu_codigo(Integer.parseInt(tf_codigo.getText().toString()));
-            aluno.setAlu_nome(tf_nome.getText());
-            aluno.setAlu_curso(tf_curso.getText());
-            aluno.setAlu_fone(tf_fone.getText());
-            aluno.setAlu_cidade(tf_cidade.getText());
-
-            Transaction tx_aluno = sessao.beginTransaction();
-            sessao.update(aluno);
-            tx_aluno.commit();
-            sessao.close();
-            JOptionPane.showMessageDialog(null, "Aletrado com sucesso :");
-            preencher_jtable();
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro de inserssão :" + e);
-
-        }
-
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
@@ -455,7 +422,6 @@ public class formAluno extends javax.swing.JFrame {
     private javax.swing.JButton bt_salvar;
     private javax.swing.JButton bt_voltar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;

@@ -25,7 +25,7 @@ public class EditarAluno {
               
               Transaction tx_aluno= sessao.beginTransaction();
               
-              sessao.save(aluno);
+              sessao.saveOrUpdate(aluno);
               
               tx_aluno.commit();
               sessao.close();
