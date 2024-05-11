@@ -11,6 +11,9 @@ import org.hibernate.Transaction;
 public class formAluno extends javax.swing.JFrame {
 
     SessionFactory fabrica = new Configuration().configure().buildSessionFactory();
+    List<Aluno> lista_aluno = new ArrayList<>();
+    int posicao_atual = 0;
+    int tamanho_lista = 0;
 
     public formAluno() {
         initComponents();
@@ -38,6 +41,10 @@ public class formAluno extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,6 +124,29 @@ public class formAluno extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("|<");
+
+        jButton6.setText(">|");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("<");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText(">");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -165,7 +195,15 @@ public class formAluno extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)))
+                        .addComponent(jButton4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton5)
+                        .addGap(2, 2, 2)
+                        .addComponent(jButton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton6)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -194,7 +232,11 @@ public class formAluno extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButton4)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6)
+                    .addComponent(jButton7)
+                    .addComponent(jButton8))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
@@ -328,6 +370,35 @@ public class formAluno extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        if (posicao_atual < (tamanho_lista - 1)) {
+            posicao_atual++;
+            Aluno aluno = lista_aluno.get(posicao_atual);
+            tf_codigo.setText("" + aluno.getAlu_codigo());
+            tf_nome.setText(aluno.getAlu_nome());
+            tf_curso.setText(aluno.getAlu_curso());
+            tf_fone.setText(aluno.getAlu_fone());
+            tf_cidade.setText(aluno.getAlu_cidade());
+        }
+
+
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        /* posicao_atual--;
+        Aluno aluno = lista_aluno.get(posicao_atual);
+        tf_codigo.setText("" + aluno.getAlu_codigo());
+        tf_nome.setText(aluno.getAlu_nome());
+        tf_curso.setText(aluno.getAlu_curso());
+        tf_fone.setText(aluno.getAlu_fone());
+        tf_cidade.setText(aluno.getAlu_cidade());
+         */
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -342,6 +413,10 @@ public class formAluno extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -370,11 +445,8 @@ public class formAluno extends javax.swing.JFrame {
         try {
 
             Session sessao = fabrica.openSession();
-
-            List<Aluno> lista_aluno = new ArrayList<>();
             lista_aluno = sessao.createQuery("from Aluno").list();
-            int tamanho_lista = lista_aluno.size();
-
+            tamanho_lista = lista_aluno.size();
             for (int i = 0; i < tamanho_lista; i++) {
                 Aluno aluno = lista_aluno.get(i);
 
