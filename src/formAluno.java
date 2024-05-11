@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
@@ -18,6 +19,8 @@ public class formAluno extends javax.swing.JFrame {
     public formAluno() {
         initComponents();
         preencher_jtable();
+        //cor so para o item selecionado
+        jTable1.setSelectionBackground(Color.GREEN);
     }
 
     @SuppressWarnings("unchecked")
@@ -390,6 +393,7 @@ public class formAluno extends javax.swing.JFrame {
         tf_fone.setText(aluno.getAlu_fone());
         tf_cidade.setText(aluno.getAlu_cidade());
         posicao_atual = tamanho_lista - 1;
+        jTable1.setRowSelectionInterval(posicao_atual, posicao_atual);
 
     }//GEN-LAST:event_bt_finalActionPerformed
 
@@ -402,6 +406,7 @@ public class formAluno extends javax.swing.JFrame {
             tf_curso.setText(aluno.getAlu_curso());
             tf_fone.setText(aluno.getAlu_fone());
             tf_cidade.setText(aluno.getAlu_cidade());
+            jTable1.setRowSelectionInterval(posicao_atual, posicao_atual);
         }
 
 
@@ -417,6 +422,7 @@ public class formAluno extends javax.swing.JFrame {
             tf_fone.setText(aluno.getAlu_fone());
             tf_cidade.setText(aluno.getAlu_cidade());
             posicao_atual--;
+            jTable1.setRowSelectionInterval(posicao_atual, posicao_atual);
         }
     }//GEN-LAST:event_bt_voltarActionPerformed
 
@@ -429,6 +435,7 @@ public class formAluno extends javax.swing.JFrame {
         tf_fone.setText(aluno.getAlu_fone());
         tf_cidade.setText(aluno.getAlu_cidade());
         posicao_atual = 0;
+        jTable1.setRowSelectionInterval(posicao_atual, posicao_atual);
     }//GEN-LAST:event_bt_primeiroActionPerformed
 
     public static void main(String args[]) {
@@ -502,6 +509,7 @@ public class formAluno extends javax.swing.JFrame {
                 tf_curso.setText(aluno.getAlu_curso());
                 tf_fone.setText(aluno.getAlu_fone());
                 tf_cidade.setText(aluno.getAlu_cidade());
+                jTable1.setRowSelectionInterval(0, 0);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao Listar " + e);
