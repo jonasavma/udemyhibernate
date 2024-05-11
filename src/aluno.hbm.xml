@@ -5,15 +5,17 @@
 
 <hibernate-mapping>
 
-	<class name="Aluno" table="alunos">
-            <id name="alu_codigo" column="alu_codigo" type="int" >
-                <generator class="increment" />
-            </id>
-		<property name="alu_nome" />
-		<property name="alu_cidade" />
-		<property name="alu_fone" />
-		<property name="alu_curso" />
-	</class>
+    <class name="Aluno" table="alunos">
+        <id name="alu_codigo" column="alu_codigo" type="int" >
+            <generator class="sequence" >
+                <param name="sequence">alunos_alu_codigos_seq</param>
+            </generator>
+        </id>
+        <property name="alu_nome" />
+        <property name="alu_cidade" />
+        <property name="alu_fone" />
+        <property name="alu_curso" />
+    </class>
 
 
 

@@ -53,6 +53,8 @@ public class formAluno extends javax.swing.JFrame {
 
         jLabel1.setText("Codigo.:");
 
+        tf_codigo.setBackground(new java.awt.Color(204, 255, 204));
+        tf_codigo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         tf_codigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_codigoActionPerformed(evt);
