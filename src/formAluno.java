@@ -41,7 +41,7 @@ public class formAluno extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bt_salvar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         bt_primeiro = new javax.swing.JButton();
@@ -106,10 +106,10 @@ public class formAluno extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Salvar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bt_salvar.setText("Salvar");
+        bt_salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bt_salvarActionPerformed(evt);
             }
         });
 
@@ -199,7 +199,7 @@ public class formAluno extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(bt_salvar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -238,7 +238,7 @@ public class formAluno extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2)
+                    .addComponent(bt_salvar)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(bt_primeiro)
@@ -299,12 +299,12 @@ public class formAluno extends javax.swing.JFrame {
         tf_cidade.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void bt_salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salvarActionPerformed
 
         try {
             Session sessao = fabrica.openSession();
             Aluno aluno = new Aluno();
-            aluno.setAlu_codigo(Integer.parseInt(tf_codigo.getText().toString()));
+            //aluno.setAlu_codigo(Integer.parseInt(tf_codigo.getText().toString()));
             aluno.setAlu_nome(tf_nome.getText());
             aluno.setAlu_curso(tf_curso.getText());
             aluno.setAlu_fone(tf_fone.getText());
@@ -324,7 +324,7 @@ public class formAluno extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_bt_salvarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
@@ -450,9 +450,9 @@ public class formAluno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_final;
     private javax.swing.JButton bt_primeiro;
+    private javax.swing.JButton bt_salvar;
     private javax.swing.JButton bt_voltar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton8;
