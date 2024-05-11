@@ -259,6 +259,7 @@ public class formAluno extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int linha = jTable1.getSelectedRow();
+        posicao_atual = linha;
         //JOptionPane.showMessageDialog(null, "linha ="+linha);
         /*tf_codigo.setText(jTable1.getValueAt(linha, 0).toString());
         tf_nome.setText(jTable1.getValueAt(linha, 1).toString());
@@ -389,14 +390,15 @@ public class formAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        /* posicao_atual--;
-        Aluno aluno = lista_aluno.get(posicao_atual);
-        tf_codigo.setText("" + aluno.getAlu_codigo());
-        tf_nome.setText(aluno.getAlu_nome());
-        tf_curso.setText(aluno.getAlu_curso());
-        tf_fone.setText(aluno.getAlu_fone());
-        tf_cidade.setText(aluno.getAlu_cidade());
-         */
+        if (posicao_atual > 0) {
+            posicao_atual--;
+            Aluno aluno = lista_aluno.get(posicao_atual);
+            tf_codigo.setText("" + aluno.getAlu_codigo());
+            tf_nome.setText(aluno.getAlu_nome());
+            tf_curso.setText(aluno.getAlu_curso());
+            tf_fone.setText(aluno.getAlu_fone());
+            tf_cidade.setText(aluno.getAlu_cidade());
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     public static void main(String args[]) {
@@ -464,7 +466,7 @@ public class formAluno extends javax.swing.JFrame {
             if (!lista_aluno.isEmpty()) {
 
                 Aluno aluno = lista_aluno.get(0);
-
+                posicao_atual = 0;
                 tf_codigo.setText("" + aluno.getAlu_codigo());
                 tf_nome.setText(aluno.getAlu_nome());
                 tf_curso.setText(aluno.getAlu_curso());
