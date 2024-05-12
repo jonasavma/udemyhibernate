@@ -24,11 +24,15 @@ public class ListarAlunos {
                     .setProperty("pool_size", "10")
                     .configure().buildSessionFactory();
             Session sessao = fabrica.openSession();
+            Aluno obj_aluno = (Aluno) sessao.get(Aluno.class, 3 );
+            String dadosn = obj_aluno.getAlu_nome();
+            JOptionPane.showMessageDialog(null, "Nova de consultar aluno;\n\n"+dadosn);
 
             List<Aluno> lista_aluno = new ArrayList();
             lista_aluno = sessao.createQuery("from Aluno").list();
             int tamanho_lista = lista_aluno.size();
             String dados = "";
+           
             for (int i = 0; i < tamanho_lista; i++) {
                 Aluno aluno = lista_aluno.get(i);
                 System.out.println("Codigo :" + aluno.getAlu_codigo() + "Nome :" + aluno.getAlu_nome() + "Curso :" + aluno.getAlu_fone() + "Fone :" + "Cidade :" + aluno.getAlu_cidade());
