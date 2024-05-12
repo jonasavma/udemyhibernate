@@ -5,20 +5,11 @@
 
 <hibernate-configuration>
 
-	<session-factory>
-		<!-- Configurações de Conexão com o Banco de Dados -->
+    <session-factory>
+        <!-- Configurações de Conexão com o Banco de Dados -->
+        <mapping resource="aluno.hbm.xml" />
 
-		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5433/javahibernate</property>
-		<property name="hibernate.connection.username">postgres</property>
-		<property name="hibernate.connection.password">root</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-		<property name="current_session_context_class">thread</property>
-		<property name="hbm2ddl.auto">update</property>
-		
-		<mapping resource="aluno.hbm.xml" />
-
-	</session-factory>
+    </session-factory>
 </hibernate-configuration>
 
 
