@@ -19,6 +19,8 @@ public class ListarAlunos {
                     .setProperty("hibernate.connection.username", "postgres")
                     .setProperty("hibernate.connection.password", "root")
                     .setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect")
+                    .setProperty("hibernate.show_sql", "true")
+                    .setProperty("hibernate.format_sql", "true")
                     .setProperty("current_session_context_class", "threa")
                     .setProperty("hbm2ddl.auto", "update")
                     .setProperty("pool_size", "10")
