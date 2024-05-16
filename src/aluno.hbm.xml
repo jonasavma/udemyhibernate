@@ -15,6 +15,11 @@
         <property name="alu_cidade" />
         <property name="alu_fone" />
         <property name="alu_curso" />
+        
+        <set name="telefones_alunos"  table="telefones_alunos" >
+            <key column="tel_codaluno" />
+            <element column="tel_numero"  type="string"/>
+        </set>
     </class>
 
 

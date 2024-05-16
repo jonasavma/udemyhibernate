@@ -11,7 +11,7 @@ public class Aluno {
     private String alu_curso;
     //criando coleções exite varios tipos de coleções
     //que tipo de dados tipo texto 
-    private Set<String> telefones_aluno = new HashSet<String>();
+    private Set<String> telefones_alunos = new HashSet<String>();
 
     public Aluno() {
 
@@ -57,12 +57,14 @@ public class Aluno {
         this.alu_curso = alu_curso;
     }
 
-    public Set<String> getTelefones_aluno() {
-        return telefones_aluno;
+    public Set<String> getTelefones_alunos() {
+        return telefones_alunos;
     }
 
-    public void setTelefones_aluno(Set<String> telefones_aluno) {
-        this.telefones_aluno = telefones_aluno;
+    public void setTelefones_alunos(Set<String> telefones_alunos) {
+        this.telefones_alunos = telefones_alunos;
     }
+
+  
 
 }
