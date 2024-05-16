@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import javax.swing.JOptionPane;
@@ -34,8 +35,12 @@ public class ListarAlunos {
             Set<String> telefones_alunos = obj_aluno.getTelefones_alunos();
 
             int quantidade_fones_alunos = telefones_alunos.size();
-
-            JOptionPane.showMessageDialog(null, "Nova de consultar aluno;\n\n" + "Nome do Aluno.:" + dadosn + "\n\n" + "Fones deste aluno " + quantidade_fones_alunos);
+            Iterator it_fones_aluno = telefones_alunos.iterator();
+            String fones_deste_aluno = "";
+            for (int i = 0; i < quantidade_fones_alunos; i++) {
+                fones_deste_aluno =fones_deste_aluno + "\n Fone  " + (i + 1) + "." +  it_fones_aluno.next();
+            }
+            JOptionPane.showMessageDialog(null, "Nova forma de consultar aluno;\n\n" + "Nome do Aluno.:" + dadosn + "\n\n" + "Fones deste aluno " + quantidade_fones_alunos + "\n" + fones_deste_aluno);
 
             List<Aluno> lista_aluno = new ArrayList();
 
