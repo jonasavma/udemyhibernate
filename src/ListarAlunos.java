@@ -6,7 +6,6 @@ import java.util.Set;
 import javax.swing.JOptionPane;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class ListarAlunos {
@@ -38,7 +37,7 @@ public class ListarAlunos {
             Iterator it_fones_aluno = telefones_alunos.iterator();
             String fones_deste_aluno = "";
             for (int i = 0; i < quantidade_fones_alunos; i++) {
-                fones_deste_aluno =fones_deste_aluno + "\n Fone  " + (i + 1) + "." +  it_fones_aluno.next();
+                fones_deste_aluno = fones_deste_aluno + "\n Fone  " + (i + 1) + "." + it_fones_aluno.next();
             }
             JOptionPane.showMessageDialog(null, "Nova forma de consultar aluno;\n\n" + "Nome do Aluno.:" + dadosn + "\n\n" + "Fones deste aluno " + quantidade_fones_alunos + "\n" + fones_deste_aluno);
 

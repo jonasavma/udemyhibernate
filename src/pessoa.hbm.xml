@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="Pessoa" table="pessoa">
+        <id name="pes_codigo" column="pes_codigo" type="int" >
+            <generator class="sequence" >
+                <param name="sequence">pessoa_pes_codigos_seq</param>
+            </generator>
+        </id>
+        <property name="pes_nome" />
+        <property name="pes_email" />
+        <property name="pes_sexo" />
+        <property name="pes_idade" />
+        <property name="pes_cpf" />
+        <property name="pes_fone" />
+        
+        <component  name="obj_endereco">
+            <property name="pes_logradouro" />
+            <property name="pes_numero" />
+            <property name="pes_complemento" />
+            <property name="pes_bairro" />
+            <property name="pes_cidade" />
+        </component>
+        
+    </class>
+
+
+
+</hibernate-mapping>

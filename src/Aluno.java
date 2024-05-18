@@ -1,8 +1,9 @@
 
+import java.io.Serializable;
 import java.util.Set;
 import java.util.HashSet;
 
-public class Aluno {
+public class Aluno implements Serializable {
 
     private int alu_codigo;
     private String alu_nome;
@@ -64,7 +65,5 @@ public class Aluno {
     public void setTelefones_alunos(Set<String> telefones_alunos) {
         this.telefones_alunos = telefones_alunos;
     }
-
-  
 
 }

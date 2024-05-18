@@ -8,7 +8,8 @@
     <session-factory>
         <!-- Configurações de Conexão com o Banco de Dados -->
         <mapping resource="aluno.hbm.xml" />
-
+        <mapping resource="pessoa.hbm.xml" />
+        
     </session-factory>
 </hibernate-configuration>
 
