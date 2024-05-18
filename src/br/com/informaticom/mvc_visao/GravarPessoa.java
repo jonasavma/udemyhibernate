@@ -1,4 +1,8 @@
+package br.com.informaticom.mvc_visao;
 
+
+import br.com.informaticom.modelo.Pessoa;
+import br.com.informaticom.modelo.Endereco;
 import javax.swing.JOptionPane;
 import org.hibernate.*;
 import org.hibernate.cfg.*;

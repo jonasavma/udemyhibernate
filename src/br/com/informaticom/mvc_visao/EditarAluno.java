@@ -1,4 +1,7 @@
+package br.com.informaticom.mvc_visao;
 
+
+import br.com.informaticom.modelo.Aluno;
 import javax.swing.JOptionPane;
 import org.hibernate.*;
 import org.hibernate.cfg.*;

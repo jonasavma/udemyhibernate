@@ -1,4 +1,7 @@
+package br.com.informaticom.mvc_visao;
 
+
+import br.com.informaticom.modelo.Aluno;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;

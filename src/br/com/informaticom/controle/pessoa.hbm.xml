@@ -5,7 +5,7 @@
 
 <hibernate-mapping>
 
-    <class name="Pessoa" table="pessoa">
+    <class name="br.com.informaticom.modelo.Pessoa" table="pessoa">
         <id name="pes_codigo" column="pes_codigo" type="int" >
             <generator class="sequence" >
                 <param name="sequence">pessoa_pes_codigos_seq</param>

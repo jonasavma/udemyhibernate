@@ -1,3 +1,5 @@
+package br.com.informaticom.modelo;
+
 
 import java.io.Serializable;
 

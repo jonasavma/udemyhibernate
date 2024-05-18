@@ -1,3 +1,5 @@
+package br.com.informaticom.modelo;
+
 
 public class Endereco {
 
