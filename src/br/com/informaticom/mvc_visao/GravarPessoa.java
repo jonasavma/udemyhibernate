@@ -16,7 +16,7 @@ public class GravarPessoa {
             Session sessao = fabrica.openSession();
             Pessoa obj_pessoa = new Pessoa();
             
-            obj_pessoa.setPes_nome("Jonas 5");
+            obj_pessoa.setPes_nome("Jonas 7");
             obj_pessoa.setPes_email("jonas@gmail.com");
             obj_pessoa.setPes_fone("969403632");
             obj_pessoa.setPes_cpf("85888710768");

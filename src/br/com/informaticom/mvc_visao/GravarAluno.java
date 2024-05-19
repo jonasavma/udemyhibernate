@@ -17,7 +17,7 @@ public class GravarAluno {
             Session sessao = fabrica.openSession();
             Aluno aluno = new Aluno();
             // aluno.setAlu_codigo(11);
-            aluno.setAlu_nome("Jonas com telefone ");
+            aluno.setAlu_nome("Jonas com telefone 33 ");
             aluno.setAlu_curso("hibernate");
             aluno.setAlu_fone("969403632");
             aluno.setAlu_cidade("Nova Iguaçu");
