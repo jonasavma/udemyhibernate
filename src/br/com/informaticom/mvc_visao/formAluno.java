@@ -1,6 +1,6 @@
 package br.com.informaticom.mvc_visao;
 
-
+import br.com.informaticom.DAO.AlunoDAO;
 import br.com.informaticom.modelo.Aluno;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -392,9 +392,9 @@ public class formAluno extends javax.swing.JFrame {
             aluno.setAlu_fone(tf_fone.getText());
             aluno.setAlu_cidade(tf_cidade.getText());
 
-            Transaction tx_aluno = sessao.beginTransaction();
-            sessao.saveOrUpdate(aluno);
-            tx_aluno.commit();
+            AlunoDAO obj_aluno = new AlunoDAO();
+            obj_aluno.autalizaAluno(aluno);
+
             sessao.close();
 
             JOptionPane.showMessageDialog(null, "Salvo com sucesso :");
@@ -501,7 +501,7 @@ public class formAluno extends javax.swing.JFrame {
         } else {
             listar = "from Aluno where upper(alu_nome) like '%" + tf_pesquisa.getText().toUpperCase() + "%'";
         }
-         preencher_jtable();
+        preencher_jtable();
     }//GEN-LAST:event_tf_pesquisaActionPerformed
 
     private void ordem_codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordem_codigoActionPerformed

@@ -23,10 +23,20 @@ public class AlunoDAO implements InterfaceAlunoDAO {
 
     @Override
     public void excluirAluno(Aluno aluno) {
+         Transaction tx_aluno= sessao.beginTransaction();
+         sessao.delete(aluno);
+         tx_aluno.commit();
+        
+        
     }
 
     @Override
     public void autalizaAluno(Aluno aluno) {
+         Transaction tx_aluno= sessao.beginTransaction();
+         sessao.saveOrUpdate(aluno);
+         tx_aluno.commit();
+        
+        
     }
 
 }
