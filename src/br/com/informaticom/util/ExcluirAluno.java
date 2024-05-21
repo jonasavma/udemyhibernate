@@ -15,9 +15,12 @@ public class ExcluirAluno {
         try {
             Session sessao = HibernateUtil.getSessao();//fabrica.openSession();
             Aluno aluno = new Aluno();
-            aluno.setAlu_codigo(26);
-            Transaction tx_aluno = sessao.beginTransaction();
+            aluno.setAlu_codigo(28);
 
+            Transaction tx_aluno = sessao.beginTransaction();
+            if (aluno.getTelefones_alunos().size() != 0) {
+                System.out.println("Aluno tem telefones Associados");;
+            }
             sessao.delete(aluno);
 
             tx_aluno.commit();
