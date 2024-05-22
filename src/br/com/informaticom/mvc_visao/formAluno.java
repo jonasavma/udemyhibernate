@@ -1,6 +1,7 @@
 package br.com.informaticom.mvc_visao;
 
 import br.com.informaticom.DAO.AlunoDAO;
+import br.com.informaticom.DAOgenerico.DAOGenerico;
 import br.com.informaticom.modelo.Aluno;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -392,8 +393,8 @@ public class formAluno extends javax.swing.JFrame {
             aluno.setAlu_fone(tf_fone.getText());
             aluno.setAlu_cidade(tf_cidade.getText());
 
-            AlunoDAO obj_aluno = new AlunoDAO();
-            obj_aluno.autalizaAluno(aluno);
+            DAOGenerico obj_aluno = new DAOGenerico(aluno);
+            obj_aluno.gravaORatualiza();
 
             sessao.close();
 
