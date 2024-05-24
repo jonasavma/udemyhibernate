@@ -1,29 +1,22 @@
 package br.com.informaticom.consulta;
 
-
-import br.com.informaticom.mvc_visao.*;
 import br.com.informaticom.modelo.Aluno;
 import br.com.informaticom.util.HibernateUtil;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 import javax.swing.JOptionPane;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
-public class ListarAlunos {
+public class HQL_parametros {
 
     public static void main(String[] args) {
-
         try {
 
-            
             Session sessao = HibernateUtil.getSessao();
-            Query listagem_query = sessao.createQuery("from Aluno");
-            List<Aluno> lista_alunos= listagem_query.list();
+            Query listagem_query = sessao.createQuery("from Aluno where alu_nome = :nome");
+            listagem_query.setString("nome", "Jonas Martins");
+            
+            List<Aluno> lista_alunos = listagem_query.list();
             int tamanho_lista = lista_alunos.size();
             String dados = "";
 
