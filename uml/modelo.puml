@@ -1,0 +1,41 @@
+@startuml
+
+ class Aluno {
+ + int alu_codigo;
+ + String alu_nome;
+ + String alu_cidade;
+ + String alu_fone;
+ + String alu_curso;
+ + Set<String> telefones_alunos = new HashSet<String>();
+
+}
+
+class Pessoa {
+
+   + int pes_codigo;
+   + String pes_nome;
+   + String pes_email;
+   + char pes_sexo;
+   + int pes_idade;
+   + String pes_fone;
+   + String pes_cpf;
+   + Endereco obj_endereco;
+
+
+
+}
+  Pessoa --> Endereco
+
+class Endereco{
+ + String pes_logradouro;
+ + int pes_numero;
+ + String pes_complemento;
+ + String pes_bairro;
+ + String pes_cidade;
+
+
+}
+
+@enduml
+
+
