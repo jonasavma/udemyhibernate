@@ -5,7 +5,9 @@
         <group>
             <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/ListarAlunosDAOGenerico.java</file>
             <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/DAOGenerico.java</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/hibernate.properties</file>
             <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/InterfaceDAOGenerico.java</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/util/GeraTabelaBanco.java</file>
             <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/mvc_visao/formAluno.java</file>
             <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/ListarPessoaDAOGenerico.java</file>
             <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/AtualizaPessoaDAOGenerico.java</file>
