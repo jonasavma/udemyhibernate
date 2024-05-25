@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/ListarAlunosDAOGenerico.java</file>
-            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/DAOGenerico.java</file>
-            <file>file:/D:/wwwaulas/udemyhibernate/src/hibernate.properties</file>
-            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/InterfaceDAOGenerico.java</file>
-            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/util/GeraTabelaBanco.java</file>
-            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/mvc_visao/formAluno.java</file>
-            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/ListarPessoaDAOGenerico.java</file>
-            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/DAOgenerico/AtualizaPessoaDAOGenerico.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

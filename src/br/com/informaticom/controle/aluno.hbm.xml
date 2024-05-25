@@ -21,6 +21,10 @@
             <element column="tel_numero"  type="string"/>
         </set>
     </class>
+    
+    <query name="mostra_todos_alunos">
+        <![CDATA[from Aluno where alu_nome = :nome]]>
+    </query>
 
 
 
