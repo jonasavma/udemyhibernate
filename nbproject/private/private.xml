@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/consulta/HQL_parametros.java</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/hibernate.properties</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/consulta/Query_sql_nativo.java</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/consulta/Query_paginar_resultado.java</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/consulta/QueryByExample.java</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/consulta/HQL_query_encapsulado.java</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/controle/aluno.hbm.xml</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/consulta/HQL_query_between.java</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/consulta/API_criteria.java</file>
+            <file>file:/D:/wwwaulas/udemyhibernate/src/br/com/informaticom/controle/pessoa.hbm.xml</file>
+        </group>
     </open-files>
 </project-private>

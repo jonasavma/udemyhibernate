@@ -40,3 +40,4 @@ secrets.yml
 .gradletasknamecache
 .sts4-cache
 /dist/
+/hibernate_associacoes/nbproject/private/
