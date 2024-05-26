@@ -6,7 +6,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Expression;
 
 import org.hibernate.criterion.Order;
 
@@ -17,9 +17,11 @@ public class API_criteria {
 
             Session sessao = HibernateUtil.getSessao();
             Criteria listagem_criteria = sessao.createCriteria(Aluno.class);
-            listagem_criteria.setMaxResults(6);
-            listagem_criteria.setFirstResult(1);
-            listagem_criteria.addOrder(Order.asc("alu_codigo"));
+            listagem_criteria.setMaxResults(10);
+            listagem_criteria.setFirstResult(0);
+            listagem_criteria.addOrder(Order.asc("alu_nome"));
+            listagem_criteria.add(Expression.eq("alu_nome", "Jonas Martins"));
+
             List<Aluno> lista_alunos = listagem_criteria.list();
             int tamanho_lista = lista_alunos.size();
             String dados = "";
